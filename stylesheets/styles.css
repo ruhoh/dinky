@@ -167,7 +167,6 @@ pre {
 	margin-bottom: 32px;
 }
 
-
 /* Tables */
 
 table {
@@ -313,6 +312,19 @@ section {
   padding-bottom:50px;
 }
 
+/* pager */
+
+ul.pagination { 
+  clear:both;
+  list-style:none;
+}
+ul.pagination li { 
+  list-style:none;
+  display:inline;
+}  
+ul.pagination li.disabled a{ 
+  color:#999;
+}
 
 /* Footer */
 

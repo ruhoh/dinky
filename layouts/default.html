@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="author" content="{{ site.author.name }}" />
+    <title>{{ page.title }}</title>
+    {{# page.description }}
+      <meta name="description" content="{{ . }}">
+    {{/ page.description }}
+    {{{ assets }}}
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header"><a href="{{ urls.base_path }}">{{ site.title }}</a></h1>
+        <p class="header">{{ site.tagline }}</p>
+        <ul>
+          {{# site.navigation?to_pages }}
+            {{> pages_list }}
+          {{/ site.navigation?to_pages }}
+        </ul>
+        {{# site.ads.google }}
+        <div class="misc ad">
+          <script type="text/javascript"><!--
+            google_ad_client = "{{ site.ads.google.client }}";
+            google_ad_slot = "{{ site.ads.google.slot }}";
+            google_ad_width = {{ site.ads.google.width }};
+            google_ad_height = {{ site.ads.google.height }};
+            //-->
+          </script>
+          <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+        </div>
+        {{/ site.ads.google }}
+        {{# site.author }}
+        <div class="misc vcard">
+          <h4>about</h4>
+          <ul>
+            {{# site.author.email }}
+            <li class="contact"><address><a href="mailto:{{site.author.email}}">email</a></address></li>
+            {{/ site.author.email }}
+            {{# site.author.github }}
+            <li class="github"><a href="http://github.com/{{ site.author.github }}/" rel="me">github</a></li>
+            {{/ site.author.github }}
+            {{# site.author.twitter }}
+            <li class="twitter"><a href="http://twitter.com/{{ site.author.twitter }}/" rel="me">twitter</a></li>
+            {{/ site.author.twitter }}
+            {{# site.author.facebook }}
+            <li class="facebook"><a href="http://facebook.com/{{ site.author.facebook }}/" rel="me">facebook</a></li>
+            {{/ site.author.facebook }}
+            {{# site.author.flickr }}
+            <li class="flickr"><a href="http://flickr.com/{{ site.author.flickr }}/" rel="me">flickr</a></li>
+            {{/ site.author.flickr }}
+            {{# site.author.yelp }}
+            <li class="yelp"><a href="http://{{ site.author.yelp }}.yelp.com/" rel="me">yelp</a></li>
+            {{/ site.author.yelp }}
+            {{# site.author.pinterest }}
+            <li class="pinterest"><a href="http://pinterest.com/{{ site.author.pinterest }}" rel="me">pinterest</a></li>
+            {{/ site.author.pinterest }}
+          </ul>
+        </div><!-- misc -->
+        {{/ site.author }}
+      </header>
+
+      <section>
+      {{{ content }}}
+      </section>
+
+      <footer>
+      <p><small>Hosted on <a href="http://post.ruhoh.com">ruhoh.com</a> using the <a href="https://github.com/sodabrew/theme-dinky">Dinky theme</a> for <a href="http://ruhoh.com/">ruhoh</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    
+    {{{ google_prettify }}}
+    {{{ analytics }}}
+  </body>
+</html>
